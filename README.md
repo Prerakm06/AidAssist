@@ -23,6 +23,7 @@
 * Below is a list of required components to assemble AidAssist.
 
 ### Required Items
+
 Qty | Item Description | Notes
 --- | --- | ---
 1 | Raspberry Pi (any model with GPIO support) | Used to control the system.
@@ -37,16 +38,14 @@ Qty | Item Description | Notes
 2. Install required Python libraries:
    ```sh
    pip install RPi.GPIO
-Copy the aidassist.py script onto the Raspberry Pi.
+   ```
+3. Copy the `aidassist.py` script onto the Raspberry Pi.
+4. Connect the **LCD display** and **buttons** to the GPIO pins according to the circuit diagram.
 
-Connect the LCD display and buttons to the GPIO pins according to the circuit diagram.
+## Code Overview
+The AidAssist software is written in Python and utilizes the **RPi.GPIO** library. Below is a brief explanation of the key functions:
 
-Code Overview
-The AidAssist software is written in Python and utilizes the RPi.GPIO library. Below is a brief explanation of the key functions:
-
-python
-Copy
-Edit
+```python
 import RPi.GPIO as GPIO
 import drivers
 import time
@@ -79,38 +78,30 @@ while True:
         for step in instructions[choice]:
             display.lcd_display_string(step, 2)
             time.sleep(2)
-Soldering and Installation
-Wire all components on a breadboard for initial testing.
+```
 
-Ensure button presses register properly in the software.
+## Soldering and Installation
+1. Wire all components on a **breadboard** for initial testing.
+2. Ensure button presses register properly in the software.
+3. Once confirmed, **solder** all components onto a **PCB** or **permanent board**.
+4. Mount the system inside an **enclosure** to protect the components.
 
-Once confirmed, solder all components onto a PCB or permanent board.
+## Operation
+* Power on the AidAssist device.
+* Use the **navigation buttons** to scroll through the injury list.
+* Select an injury, and the device will display **step-by-step** first-aid guidance.
+* Follow the instructions displayed on the **LCD screen**.
 
-Mount the system inside an enclosure to protect the components.
+## Future Improvements
+* Integrate a **voice assistant** to read out instructions.
+* Improve **power efficiency** by using a **battery pack**.
+* Add a **touchscreen interface** for easier navigation.
 
-Operation
-Power on the AidAssist device.
+## Acknowledgments
+* This project was inspired by **real-world first-aid needs** and aims to assist individuals in emergency situations.
+* Developed by the **AidAssist Team** for the **HOSA Medical Innovation Competition 2023**.
 
-Use the navigation buttons to scroll through the injury list.
-
-Select an injury, and the device will display step-by-step first-aid guidance.
-
-Follow the instructions displayed on the LCD screen.
-
-Future Improvements
-Integrate a voice assistant to read out instructions.
-
-Improve power efficiency by using a battery pack.
-
-Add a touchscreen interface for easier navigation.
-
-Acknowledgments
-This project was inspired by real-world first-aid needs and aims to assist individuals in emergency situations.
-
-Developed by the AidAssist Team for the HOSA Medical Innovation Competition.
-
-vbnet
-Copy
-Edit
-
-This Markdown file is formatted for GitHub and will display correctly when copied into a `.md` file. Let me know if you need any modifications! 🚀
+### Team Members:
+* **Prerak Mahajan**
+* **Harshel Patel**
+* **Tanay Jain**
