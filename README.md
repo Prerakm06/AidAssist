@@ -7,7 +7,7 @@
 * This project is for **educational and non-commercial use** only.
 * Please read through all documentation before starting this project.
 
-![AidAssist Prototype](.Images)
+![AidAssist Prototype](Images)
 
 ## Features
 * Guides users through medical procedures for various injuries using an LCD display.
